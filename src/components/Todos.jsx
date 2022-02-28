@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { TodoContext } from "../context/TodoListContext";
+import AddTodo from "./AddTodo";
 
-const Todos = ({ todos, setTodos }) => {
+const Todos = () => {
+  const [todos, setTodos] = useContext(TodoContext);
+  const [showModal, setShowModal] = useState(false);
   const doneHandler = (id) => {
     let newList = todos.map((todo) => {
       return todo.id === id
@@ -11,6 +15,9 @@ const Todos = ({ todos, setTodos }) => {
   };
   const deleteHandler = (id) => {
     setTodos(todos.filter((todo) => id !== todo.id));
+  };
+  const openForm = () => {
+    setShowModal(true);
   };
   return (
     <div className="todos">
@@ -37,6 +44,7 @@ const Todos = ({ todos, setTodos }) => {
           ) : null}
         </div>
       ))}
+      {!showModal ? <button onClick={openForm}>+ Item</button> : <AddTodo />}
     </div>
   );
 };

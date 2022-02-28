@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../context/TodoListContext";
 
-const CompletedTodos = ({ todos, setTodos }) => {
+const CompletedTodos = () => {
+  const [todos, setTodos] = useContext(TodoContext);
   const todoHandler = (id) => {
     let newList = todos.map((todo) => {
       return todo.id === id
@@ -14,7 +16,7 @@ const CompletedTodos = ({ todos, setTodos }) => {
   };
   return (
     <div className="completed__todos">
-      <h1>Completed Todos</h1>
+      <h1>Done</h1>
       {todos.map((todo) => (
         <div key={todo.id}>
           {todo.completed ? (

@@ -1,20 +1,15 @@
-import { useEffect, useState } from "react";
 import Todos from "./components/Todos";
 import "./App.css";
 import CompletedTodos from "./components/CompletedTodos";
+import TodoListContext from "./context/TodoListContext";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/1/todos")
-      .then((response) => response.json())
-      .then((json) => setTodos(json));
-  }, []);
   return (
     <div className="App">
-      <Todos todos={todos} setTodos={setTodos} />
-      <CompletedTodos todos={todos} setTodos={setTodos} />
+      <TodoListContext>
+        <Todos />
+        <CompletedTodos />
+      </TodoListContext>
     </div>
   );
 }
