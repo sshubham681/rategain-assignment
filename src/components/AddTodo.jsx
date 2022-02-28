@@ -20,7 +20,9 @@ const AddTodo = () => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={submitHandler}>Add</button>
+      <button className="submitBtn" onClick={submitHandler}>
+        Add
+      </button>
     </form>
   );
 };

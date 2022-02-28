@@ -21,7 +21,9 @@ const Todos = () => {
   };
   return (
     <div className="todos">
-      <h1>Todos</h1>
+      <div className="title">
+        <h1>Todos</h1>
+      </div>
       {todos.map((todo) => (
         <div key={todo.id}>
           {!todo.completed ? (
@@ -44,7 +46,13 @@ const Todos = () => {
           ) : null}
         </div>
       ))}
-      {!showModal ? <button onClick={openForm}>+ Item</button> : <AddTodo />}
+      {!showModal ? (
+        <div className="item">
+          <button onClick={openForm}>+ Item</button>
+        </div>
+      ) : (
+        <AddTodo />
+      )}
     </div>
   );
 };

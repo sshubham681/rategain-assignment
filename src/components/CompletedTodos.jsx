@@ -16,7 +16,9 @@ const CompletedTodos = () => {
   };
   return (
     <div className="completed__todos">
-      <h1>Done</h1>
+      <div className="title">
+        <h1>Done</h1>
+      </div>
       {todos.map((todo) => (
         <div key={todo.id}>
           {todo.completed ? (

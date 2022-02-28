@@ -7,7 +7,8 @@ const TodoListContext = (props) => {
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/users/1/todos")
-      .then((response) => setTodos(response.data));
+      .then((response) => setTodos(response.data))
+      .catch((error) => console.log(error));
   }, []);
   return (
     <TodoContext.Provider value={[todos, setTodos]}>
