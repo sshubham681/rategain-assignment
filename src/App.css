@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,30 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.App {
+  display: flex;
+}
+
+.todos {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 40%;
+  margin: 10px;
+  text-align: center;
+}
+
+.completed__todos {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 40%;
+  margin: 10px;
+  text-align: center;
+}
+.btn {
+  background-color: rgb(57, 188, 211);
+  border-radius: 10px;
+  margin: 3px;
+  border: none;
+  cursor: pointer;
 }
