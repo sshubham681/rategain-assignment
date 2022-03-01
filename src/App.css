@@ -29,11 +29,18 @@
   border: none;
   cursor: pointer;
 }
-.item {
-  margin-left: 10px;
+.item button {
+  width: 90px;
+  height: 40px;
+  margin: 12px;
   border-radius: 10px;
+  font-weight: bold;
+  right: 0px;
   border: none;
-  cursor: pointer;
+  font-size: 15px;
+  background-color: #2f74c0;
+  color: #fafafa;
+  box-shadow: 0 0 10px black;
 }
 input {
   border-radius: 50px;
